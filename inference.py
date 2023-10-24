@@ -45,7 +45,7 @@ def gkern(kernlen=21, nsig=3):
 
 class InferenceArgumentParser(Tap):
     segment_id: str ='20230925002745'
-    segment_path:str='.scroll-1-inference/'
+    segment_path:str='.scroll-1-inference'
     model_path:str= 'outputs/vesuvius/pretraining_all/vesuvius-models/valid_20230827161847_0_fr_i3depoch=7.ckpt'
     out_path:str='./'
     stride: int = 2
