@@ -45,7 +45,7 @@ def gkern(kernlen=21, nsig=3):
 
 class InferenceArgumentParser(Tap):
     segment_id: str ='20230925002745'
-    segment_path:str='.eval_scrolls/'
+    segment_path:str='.scroll-1-inference/'
     model_path:str= 'outputs/vesuvius/pretraining_all/vesuvius-models/valid_20230827161847_0_fr_i3depoch=7.ckpt'
     out_path:str='./'
     stride: int = 2
@@ -578,7 +578,7 @@ def predict_fn(test_loader, model, device, test_xyxys,pred_shape):
     # mask_pred/=mask_pred.max()
     return mask_pred
 
-fragments=os.listdir('./eval_scrolls')
+fragments=os.listdir('./scroll-1-inference')
 fragment_id=args.segment_id
 
 test_loader,test_xyxz,test_shape,fragment_mask=get_img_splits(fragment_id,args.start_idx,args.start_idx+30,0)
