@@ -201,7 +201,7 @@ def read_image_mask(fragment_id,start_idx=18,end_idx=38,rotation=0):
     for i in idxs:
         
         #image = cv2.imread(f"{dataset_path}/{fragment_id}/{i:02}.tif", 0)
-        image = cv2.imread(f"{dataset_path}/{i:02}.tif", 0)
+        image = cv2.imread(f"{dataset_path}/{fragment_id}/{i:02}.tif", 0)
 
 
         pad0 = (CFG.tile_size - image.shape[0] % CFG.tile_size)
