@@ -45,7 +45,7 @@ def gkern(kernlen=21, nsig=3):
 
 class InferenceArgumentParser(Tap):
     segment_id: str ='20230925002745'
-    segment_path:str='./eval_scrolls'
+    segment_path:str='.scroll-1-inference/'
     model_path:str= 'outputs/vesuvius/pretraining_all/vesuvius-models/valid_20230827161847_0_fr_i3depoch=7.ckpt'
     out_path:str='./'
     stride: int = 2
@@ -200,7 +200,9 @@ def read_image_mask(fragment_id,start_idx=18,end_idx=38,rotation=0):
     dataset_path=args.segment_path
     for i in idxs:
         
-        image = cv2.imread(f"{dataset_path}/{fragment_id}/layers/{i:02}.tif", 0)
+        #image = cv2.imread(f"{dataset_path}/{fragment_id}/layers/{i:02}.tif", 0)
+        image = cv2.imread(f"{dataset_path}/layers/{i:02}.tif", 0)
+
 
         pad0 = (CFG.tile_size - image.shape[0] % CFG.tile_size)
         pad1 = (CFG.tile_size - image.shape[1] % CFG.tile_size)
